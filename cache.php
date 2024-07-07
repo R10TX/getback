@@ -1,4 +1,7 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
+
 session_start();
 function is_logged_in() {
     return isset($_SESSION['R10TXER']);
